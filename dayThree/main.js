@@ -20,7 +20,7 @@
 // Lembre-se que você pode sempre personalizar o jogo da forma que quiser.
 
 
-const answer1P = document.querySelector('.answer1-p');
+const myList = document.querySelector('.my-list');
 
 const question1 = document.getElementById('question1');
 const question2 = document.getElementById('question2');
@@ -44,6 +44,10 @@ const questionTwoBack = document.querySelector('.back-end-question2')
 const questionThree = document.querySelector('.front-and-back')
 const questionFour = document.querySelector('.last-question')
 
+const insertTecnologies = document.querySelector('.insert-tecnologies')
+const insertTecnologiesBtnYes = document.querySelector('.insert-tecnologies-yes')
+const insertTecnologiesBtnNo = document.querySelector('.insert-tecnologies-no')
+
 
 
 btnQuestion1.addEventListener('click', () => {
@@ -61,7 +65,9 @@ btnQuestion1.addEventListener('click', () => {
         
         question1.disabled = true;
         btnQuestion1.setAttribute('disabled', 'true');
-    } 
+    } else {
+        alert('Digite um número válido entre 1 e 2')
+    }
 })
 
 
@@ -82,13 +88,9 @@ btnQuestion2.addEventListener('click', () => {
         btnQuestion2.setAttribute('disabled', 'true');
 
 
-    } else if (question1.value === '2' &&  question2Back.value === '1') {
-        answer2.innerHTML += 'C#'
-        questionThree.classList.remove('hide');
-        
-        question2.disabled = true;
-        btnQuestion2.setAttribute('disabled', 'true');
-    } 
+    } else {
+        alert('Digite um número válido entre 1 e 2')
+    }
 
 
 })
@@ -109,7 +111,9 @@ btnQuestion2B.addEventListener('click', () => {
         
         question2Back.disabled = true;
         btnQuestion2B.setAttribute('disabled', 'true');
-    } 
+    } else {
+        alert('Digite um número válido entre 1 e 2')
+    }
 
 
 })
@@ -130,7 +134,9 @@ btnQuestion3.addEventListener('click', () => {
         question3.disabled = true;
         btnQuestion3.setAttribute('disabled', 'true');
 
-     }
+     } else {
+        alert('Digite um número válido entre 1 e 2')
+    }
 })
 
 let myTecnologies = [];
@@ -138,8 +144,37 @@ let myTecnologies = [];
 
 btnTecnology.addEventListener('click', () => {
     let value = tecnologies.value
+   
+    if(value === '') {
+        alert('Insira pelo menos 1 valor') 
+    } else {
     myTecnologies.push(value)
     
+    btnTecnology.setAttribute('disabled', 'true');
+    tecnologies.disabled = true;
+    insertTecnologies.classList.remove('hide');
+   
+    }
+    
+
 })
 
+insertTecnologiesBtnYes.addEventListener('click', () => {
+    tecnologies.value = ' ';
+    
+    tecnologies.disabled = false;
+    btnTecnology.removeAttribute('disabled');
+    insertTecnologies.classList.add('hide');
+})
 
+insertTecnologiesBtnNo.addEventListener('click', () => {
+
+    myTecnologies.forEach((item) => {
+        myList.innerHTML += `<li>${item}</li>`
+    })
+
+    myList.classList.remove('hide');
+    insertTecnologiesBtnYes.setAttribute('disabled', 'true');
+    insertTecnologiesBtnNo.setAttribute('disabled', 'true');
+
+})
