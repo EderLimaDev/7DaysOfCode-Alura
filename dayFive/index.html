@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Day 5 Exercise</title>
+  </head>
+  <body>
+    <main class="container">
+      <h1>Minha lista de Mercado</h1>
+      <div class="popUp">
+        <h3 class="popUp-message">
+          Gostaria de adicionar algum item na lista ?
+        </h3>
+        <div>
+          <button class="btn-confirm">Sim</button>
+          <button class="btn-not-confirm">Não</button>
+        </div>
+      </div>
+      <div>
+        <input id="item" type="text" placeholder="item" />
+        <select title="select items" id="lista-carrinho">
+          <option value="frutas">Frutas</option>
+          <option value="laticinios">Laticinios</option>
+          <option value="congelados">Congelados</option>
+          <option value="doces">Doces</option>
+    
+        </select>
+        <button class="addCart">Adicionar</button>
+      </div>
+
+      <ul id="list"></ul>
+    </main>
+
+    <script src="./main.js"></script>
+  </body>
+</html>
