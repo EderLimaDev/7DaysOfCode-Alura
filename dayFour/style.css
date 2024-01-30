@@ -1,0 +1,89 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+ul {
+    list-style: none;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-image: url('/dayFour/img/bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 10%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    border-radius: 20px;
+    background-color: rgba(255,255,255,0.8);
+    border: 1px solid #fff;
+    text-align: center;
+}
+
+#head-message {
+    font-size: 1.5rem;
+    padding-top: 15px;
+}
+
+h3 {
+   color: #FF5F22; 
+   padding: 20px;
+}
+
+p {
+    color: red;
+    padding: 10px;
+}
+
+#player-number {
+    width: 60px;
+    padding: 8px;
+    margin: 8px;
+    border: none;
+    outline: none;
+    font-size: 1.5rem;
+    text-align: center;
+    
+}
+
+#player-number::-webkit-inner-spin-button {
+    appearance: none;
+}
+
+.btn-try, .play-again {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 7px;
+    border-radius: 10px;
+    background-color: #228b22;
+    color: #fff;
+}
+.btn-try:disabled {
+    background-color: #ccc;
+}
+
+#result-message {
+    font-size: 1.5rem;
+    padding: 15px
+}
+
+.hide {
+    display: none;
+}
+
+@media (max-width: 720px) {
+    #head-message {
+        font-size: 1rem;
+    
+    }
+}
