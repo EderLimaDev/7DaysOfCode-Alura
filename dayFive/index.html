@@ -4,19 +4,38 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <title>Day 5 Exercise</title>
+    <title>Day 5 and 6 Exercise</title>
   </head>
   <body>
+    <header>
+      <div>Market List</div>
+    </header>
+
     <main class="container">
       <h1>Minha lista de Mercado</h1>
       <div class="popUp">
         <h3 class="popUp-message">
           Gostaria de adicionar algum item na lista ?
         </h3>
-        <div>
-          <button class="btn-confirm">Sim</button>
-          <button class="btn-not-confirm">Não</button>
+        <div class="ctr-buttons">
+          <button type='button' class="btn-confirm">Sim</button>
+          <button type='button' class="btn-not-confirm">Não</button>
         </div>
+
+        <hr />
+
+        <h3>Gostaria de Remover algum item na lista ?</h3>
+        <div class="remove-component">
+          <button type='button' class="btn-show-list">Mostrar lista Atual</button>
+          
+          <section class="remove-item-show hide">
+            <input id="item-remove" type="text" placeholder="item a remover" />
+            <button type='button' class="btn-remove" onclick="removerItem()">Remover</button>
+            
+          </section>
+          <ul class="lista-atual"></ul>
+        </div>
+        
       </div>
       <div>
         <input id="item" type="text" placeholder="item" />
@@ -27,7 +46,7 @@
           <option value="doces">Doces</option>
     
         </select>
-        <button class="addCart">Adicionar</button>
+        <button type='button' class="addCart">Adicionar</button>
       </div>
 
       <ul id="list"></ul>
